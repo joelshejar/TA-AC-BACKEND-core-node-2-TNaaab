@@ -24,6 +24,7 @@ function handleRequest(req,res){
     })
     req.on('end', () => {
         var parsedData = JSON.parse(store)
+        res.setHeader('Content-Type', 'text/html')
         // res.setHeader('Content-Type', 'text/html')
         res.end(`<h1>${parsedData.name}</h1><h2>${parsedData.email}</h2>`)
     })
